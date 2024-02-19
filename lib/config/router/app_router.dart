@@ -7,17 +7,19 @@ final appRouter = GoRouter(
   routes: [
     GoRoute(
       path: '/',
+      name: HomeScreen.name,
       pageBuilder: (context, state) => const MaterialPage(child: HomeScreen()),
     ),
     GoRoute(
       path: '/buttons',
+      name: ButtonsScreen.name,
       pageBuilder: (context, state) =>
           const MaterialPage(child: ButtonsScreen()),
     ),
     GoRoute(
       path: '/cards',
-      pageBuilder: (context, state) =>
-          const MaterialPage(child: ButtonsScreen()),
+      name: CardsScreen.name,
+      pageBuilder: (context, state) => const MaterialPage(child: CardsScreen()),
     ),
   ],
 );
