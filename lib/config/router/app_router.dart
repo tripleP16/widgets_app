@@ -21,5 +21,11 @@ final appRouter = GoRouter(
       name: CardsScreen.name,
       pageBuilder: (context, state) => const MaterialPage(child: CardsScreen()),
     ),
+    GoRoute(
+      path: '/progress',
+      name: ProgressScreen.name,
+      pageBuilder: (context, state) =>
+          const MaterialPage(child: ProgressScreen()),
+    ),
   ],
 );
