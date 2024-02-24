@@ -27,5 +27,11 @@ final appRouter = GoRouter(
       pageBuilder: (context, state) =>
           const MaterialPage(child: SnackbarScreen()),
     ),
+    GoRoute(
+      path: '/animated',
+      name: AnimatedScreen.name,
+      pageBuilder: (context, state) =>
+          const MaterialPage(child: AnimatedScreen()),
+    ),
   ],
 );
