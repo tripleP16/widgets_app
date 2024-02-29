@@ -39,5 +39,11 @@ final appRouter = GoRouter(
       pageBuilder: (context, state) =>
           const MaterialPage(child: UiControlsScreen()),
     ),
+    GoRoute(
+      path: '/tutorial',
+      name: AppTutorialScreen.name,
+      pageBuilder: (context, state) =>
+          const MaterialPage(child: AppTutorialScreen()),
+    ),
   ],
 );
