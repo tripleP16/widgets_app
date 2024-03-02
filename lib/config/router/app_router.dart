@@ -45,5 +45,11 @@ final appRouter = GoRouter(
       pageBuilder: (context, state) =>
           const MaterialPage(child: AppTutorialScreen()),
     ),
+    GoRoute(
+      path: '/infinite-scroll',
+      name: InfiniteScrollScreen.name,
+      pageBuilder: (context, state) =>
+          const MaterialPage(child: InfiniteScrollScreen()),
+    ),
   ],
 );
