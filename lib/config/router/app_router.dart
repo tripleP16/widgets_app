@@ -51,5 +51,11 @@ final appRouter = GoRouter(
       pageBuilder: (context, state) =>
           const MaterialPage(child: InfiniteScrollScreen()),
     ),
+    GoRoute(
+      path: '/progress',
+      name: ProgressScreen.name,
+      pageBuilder: (context, state) =>
+          const MaterialPage(child: ProgressScreen()),
+    ),
   ],
 );
