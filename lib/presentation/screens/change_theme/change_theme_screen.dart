@@ -8,14 +8,14 @@ class ChangeThemeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isDarkMode = ref.watch(themeProvider);
+    final isDarkMode = ref.watch(themeNotifierProvider).isDarkMode;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Change Theme'),
         actions: [
           IconButton(
               onPressed: () {
-                ref.read(themeProvider.notifier).update((state) => !state);
+                ref.read(themeNotifierProvider.notifier).toggleDarkMode();
               },
               icon: Icon(isDarkMode ? Icons.dark_mode : Icons.light_mode))
         ],
@@ -31,7 +31,7 @@ class _Layout extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final colors = ref.watch(colorListProvider);
-    final selectedColor = ref.watch(selectedColorProvider);
+    final selectedColor = ref.watch(themeNotifierProvider).selectedColor;
     return ListView.builder(
         itemCount: colors.length,
         itemBuilder: (context, index) {
@@ -46,7 +46,9 @@ class _Layout extends ConsumerWidget {
               value: index,
               groupValue: selectedColor,
               onChanged: (value) {
-                ref.read(selectedColorProvider.notifier).state = index;
+                ref
+                    .read(themeNotifierProvider.notifier)
+                    .changeSelectedColor(index);
               });
         });
   }
