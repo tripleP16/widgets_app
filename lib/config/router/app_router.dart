@@ -57,5 +57,17 @@ final appRouter = GoRouter(
       pageBuilder: (context, state) =>
           const MaterialPage(child: ProgressScreen()),
     ),
+    GoRoute(
+      path: '/counter',
+      name: CounterScreen.name,
+      pageBuilder: (context, state) =>
+          const MaterialPage(child: CounterScreen()),
+    ),
+    GoRoute(
+      path: '/change_theme',
+      name: ChangeThemeScreen.name,
+      pageBuilder: (context, state) =>
+          const MaterialPage(child: ChangeThemeScreen()),
+    ),
   ],
 );
